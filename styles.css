@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    color: var(--dark-grayish-magenta);
+    margin: 0;
+
+    background-image: url(./images/bg-pattern-top-mobile.svg), 
+    url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+}
+
+.social {
+    padding-block-start: 80px;
+    padding-block-end: 80px;
+}
+
+.wrapper {
+    max-inline-size: 300px;
+    margin: auto;
+}
+
+
+.social__texts, .social__review {
+    text-align: center;
+}
+
+.social__title {
+    color: var(--very-dark-magenta);
+    font-size: 32px;
+    line-height: 32px;
+    margin-block-start: 0px;
+    margin-block-end: 20px;
+}
+
+.social__paragraph {
+    line-height: 22px;
+    font-size: 13px;
+}
+
+.social__review {
+    background-color: var(--light-grayish-magenta);
+    padding-block-start: 15px;
+    padding-block-end: 15px;
+    margin-block-end: 15px;
+    border-radius: 8px;
+}
+
+.social__rating {
+    color: var(--very-dark-magenta);
+    font-size: 13px;
+    margin-block-start: 15px;
+    margin-block-end: 0;
+}
+
+.social__card {
+    background-color: var(--very-dark-magenta);
+    border-radius: 8px;
+    padding: 30px;
+    margin-block-end: 15px;
+}
+
+.card__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card__img {
+    border-radius: 50%;
+}
+
+.card__title {
+    display: inline-block;
+    color: var(--white);
+    font-size: 12px;
+    margin: 0;
+}
+
+.card__title::after {
+    content: 'Verified Buyer';
+    display: block;
+    font-weight: normal;
+    color: var(--soft-pink);
+    opacity: .6;
+    margin-block-start: 5px;
+}
+
+.card__testimony {
+    line-height: 24px;
+    color: var(--white);
+    font-size: 12px;
+    margin-block-start: 30px;
+    margin-block-end: 0;
+}
+
+
+@media screen and (width: 1440px) {
+
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+
+        background-image: url(./images/bg-pattern-top-desktop.svg), 
+        url(./images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+    }
+    
+    .wrapper {
+        max-inline-size: 1110px;
+    }
+
+    .grid {
+        display: grid;
+        gap: 75px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "texts reviews"
+        "cards cards";
+    }
+
+    .social__texts {
+        grid-area: texts;
+        text-align: start;
+        max-inline-size: 440px;
+    }
+
+    .social__title {
+        font-size: 48px;
+        line-height: 50px;
+    }
+
+    .social__paragraph {
+        font-size: 14.5px;
+    }
+
+    .social__reviews {
+        grid-area: reviews;
+        align-self: center;
+    }
+
+    .social__review {
+        display: flex;
+        align-items: center;
+        max-inline-size: 355px;
+        padding-inline-start: 30px;
+        padding-inline-end: 30px;
+        gap: 30px;
+    }
+
+    .social__review:nth-child(2){
+        position: relative;
+        inset-inline-start: 50px;
+    }
+
+    .social__review:nth-child(3){
+        position: relative;
+        inset-inline-start: 100px;
+    }
+
+    .social__cards {
+        display: flex;
+        gap: 30px;
+        grid-area: cards;
+    }
+
+    .social__card {
+        margin-block-end: 0;
+    }
+
+    .social__rating {
+        margin-block-start: 0;
+    }
+
+    .social__card:nth-child(1) {
+        position: relative;
+        bottom:15px;
+    }
+
+    .social__card:nth-child(3) {
+        position: relative;
+        top: 15px;
+    }
+}
+
